@@ -2,6 +2,17 @@
 
 include "DB.php";
 
-$db = new DB();
+$siswa = new DB("siswa");
 
-$db->create('siswa', 2 ,[10, 'Halllooo']);
+$siswa->create([
+	'nama'	=> 'Reza K',
+	'id' 	=> 10
+]);
+
+$data = new DB("data");
+$data->create([
+	'nama'		=> 'reza',
+	'umur'		=> "",
+	'jurusan'	=> 'jurusan',
+	'kelas'		=> 10
+]);
