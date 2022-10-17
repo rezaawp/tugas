@@ -49,7 +49,6 @@ class DB {
         }
 
         $value = implode(",", $value);
-        echo "INSERT INTO $this->table ($fields) VALUES ($value)";
         return $this->query("INSERT INTO $this->table ($fields) VALUES ($value)");
     }
    
