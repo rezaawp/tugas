@@ -1,0 +1,7 @@
+http://localhost:8000/kuis/guru/mata-pelajaran/5/soal/UMUM/mapel (percantik tampilannya)
+http://localhost:8000/kuis/guru/5/soal (percantik tampilannya)
+http://localhost:8000/kuis/guru (percantik tampilannya)
+logout masih menggunakan method get
+upload gambar ke kuis
+sdlc
+pahami tahap tahap pengembangan perangkat lunak sdlc
