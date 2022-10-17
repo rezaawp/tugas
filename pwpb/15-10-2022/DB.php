@@ -9,7 +9,7 @@ class DB {
     private $table = ""; 
     private $jumlahKolom = null;
 
-    function __construct($table)
+    function __construct($table = null)
     {
         $this->mysqli = mysqli_connect($this->host, $this->username, $this->password, $this->database);
         $this->jumlahKolom = mysqli_num_rows(mysqli_query($this->mysqli,"describe $table"));
@@ -21,9 +21,9 @@ class DB {
         return mysqli_query($this->mysqli, $q);
     }
     
-    public function field()
+    private function field()
     {
-        $result = mysqli_query($this->mysqli,"SELECT * FROM $this->table");
+        $result = $this->query("SELECT * FROM $this->table");
 
         $fieldName = [];
         while($data = $result->fetch_field())
@@ -53,4 +53,24 @@ class DB {
         return $this->query("INSERT INTO $this->table ($fields) VALUES ($value)");
     }
    
+    public function delete($data)
+    {
+        $field = $this->field();
+        $fields = implode(",", $field);
+        $count = count($data);
+        $value = [];
+        if($count > 1)
+        {
+            die("Untuk menghapus data, masukan 1 kriteria saja");
+        }
+        
+        foreach($field as $f)
+        {
+            if (array_key_exists($f, $data))
+            {
+                // hapus
+                return $this->query("DELETE FROM $this->table WHERE $f = $data[$f]");
+            }
+        }
+    }
 }   
