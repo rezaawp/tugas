@@ -56,9 +56,7 @@ class DB {
     public function delete($data)
     {
         $field = $this->field();
-        $fields = implode(",", $field);
         $count = count($data);
-        $value = [];
         if($count > 1)
         {
             die("Untuk menghapus data, masukan 1 kriteria saja");
