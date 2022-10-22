@@ -1,20 +1,28 @@
 <?php 
-class DB {
-    private $host = "localhost";
-    private $database = "belajar_rezawp";
-    private $username = "root";
-    private $password = "";
 
-    private $mysqli = "";
-    private $table = ""; 
-    private $jumlahKolom = null;
+include 'config.php';
+
+class DB {
+    private $host;
+    private $database;
+    private $username;
+    private $password;
+
+    private $mysqli;
+    private $table; 
+    private $jumlahKolom;
     
-    private $dataTunggal = null;
+    private $dataTunggal;
     private $keyUpdate;
     private $valueUpdate;
 
     function __construct($table = null)
     {
+        global $db_host; global $db_database; global $db_username; global $db_password;
+        $this->host = $db_host;
+        $this->database = $db_database;
+        $this->username = $db_username;
+        $this->password = $db_password;
         $this->mysqli = mysqli_connect($this->host, $this->username, $this->password, $this->database);
         $this->jumlahKolom = mysqli_num_rows(mysqli_query($this->mysqli,"describe $table"));
         $this->table = $table;
@@ -89,12 +97,21 @@ class DB {
         $pisahkan .= "= ";
         $length = strlen($pisahkan);
         $update = null;
+        $indexOf = [];
+
         foreach($field as $f)
         {
-            // $indexOf = strpos($pisahkan, $f . '=');
-            
+            $cariIndex = (int)strpos($pisahkan, $f . '=') + strlen($f) + 1;
+            $pisahkan = substr_replace($pisahkan, "'" . $data[$f] . "',",$cariIndex,1);
+            array_push($indexOf,["field" => $f, "index" => "$cariIndex"]);
         }
-        return str_replace(" ", "'Value',", $pisahkan);;
+        $indexAkhir = (int)strlen($pisahkan) - 1;
+        $pisahkan = substr_replace($pisahkan, "",$indexAkhir);
+
+        $fieldUpdate = $pisahkan;
+
+        // return str_replace(" ", "'Value',", $pisahkan);
+        return $this->query("UPDATE $this->table SET $fieldUpdate WHERE $this->keyUpdate = '$this->valueUpdate'");
 
     }
 

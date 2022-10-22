@@ -1,35 +1,25 @@
 <?php 
 
 include "DB.php";
-include "PDO.php";
 
+$siswa = new DB("siswa");
 
-// // OOP
-// $peserta = new DB("peserta");
+$siswa->create([
+    "id"					=> 1,
+    "nama"				=> "Reza"
+]);
 
-// $peserta->create([
-//     "nama"              => "Hai",
-//     "makanan_favorit"   => "mangga"
+// $siswa->delete([
+//     'id' => 2
 // ]);
 
-// // $peserta->delete([
-// //     'makanan_favorit' => "Mangga"
-// // ]);
+// $siswa->where('nama', 'Reza');
+// $siswa->update([
+// 	'id'	=> 2,
+// 	'nama'	=> 'Abdul'
+// ]);
 
-// $pesertaNaufal = $peserta->where('nama', 'Naufal');
-// var_dump($peserta->update("sl"));
-
-// PDO
-$koneksi->query("INSERT INTO peserta VALUES ('Reza', 'Mangga')");
-
-$koneksi->query("SELECT * FROM peserta");
-
-$koneksi->query("DELETE FROM peserta WHERE nama='Reza'");
-
-$koneksi->query("UPDATE peserta SET nama='Dimas',makanan_favorit='Apel' WHERE nama='Reza'");
-
-// // var_dump($peserta->all());
-// foreach($peserta->all() as $item)
-// {
-//     echo $item["makanan_favorit"] . " <br>";
-// }
+foreach($siswa->all() as $item)
+{
+    echo $item["nama"] . " <br>";
+}

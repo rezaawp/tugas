@@ -5,3 +5,4 @@ logout masih menggunakan method get
 upload gambar ke kuis
 sdlc
 pahami tahap tahap pengembangan perangkat lunak sdlc
+waktu dihitung berdasarkan jam
