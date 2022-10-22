@@ -8,6 +8,10 @@ class DB {
     private $mysqli = "";
     private $table = ""; 
     private $jumlahKolom = null;
+    
+    private $dataTunggal = null;
+    private $keyUpdate;
+    private $valueUpdate;
 
     function __construct($table = null)
     {
@@ -66,8 +70,43 @@ class DB {
             if (array_key_exists($f, $data))
             {
                 // hapus
-                return $this->query("DELETE FROM $this->table WHERE $f = $data[$f]");
+                return $this->query("DELETE FROM $this->table WHERE $f = '$data[$f]'");
             }
         }
+    }
+
+    public function where($key, $value)
+    {
+        $this->keyUpdate = $key;
+        $this->valueUpdate = $value; 
+        return $this->dataTunggal = mysqli_fetch_array($this->query("SELECT * FROM $this->table WHERE $key = '$value'"));
+    }
+
+    public function update($data)
+    {
+        $field = $this->field();
+        $pisahkan = implode('= ', $field);
+        $pisahkan .= "= ";
+        $length = strlen($pisahkan);
+        $update = null;
+        foreach($field as $f)
+        {
+            // $indexOf = strpos($pisahkan, $f . '=');
+            
+        }
+        return str_replace(" ", "'Value',", $pisahkan);;
+
+    }
+
+    public function all()
+    {   
+        $query = $this->query("SELECT * FROM $this->table");
+        $result = [];
+        while ($data = mysqli_fetch_array($query))
+        {
+            array_push($result, $data);
+        }
+
+        return $result;
     }
 }   
