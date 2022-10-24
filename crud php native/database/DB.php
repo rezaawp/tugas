@@ -79,7 +79,7 @@ class DB {
             if (array_key_exists($f, $data))
             {
                 // hapus
-                $this->query("DELETE FROM $this->table WHERE $f = '$data[$f]'");
+                $this->query("DELETE FROM $this->table  WHERE $f = '$data[$f]'");
                 return true;
             }
         }

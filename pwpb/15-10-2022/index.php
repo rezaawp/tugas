@@ -2,24 +2,25 @@
 
 include "DB.php";
 
-$siswa = new DB("siswa");
+$siswa = new DB("peserta");
 
-$siswa->create([
-    "id"					=> 1,
-    "nama"				=> "Reza"
+// $siswa->create([
+//     "nama"					=> 1,
+//     "makanan_favorit"		=> "Reza"
+// ]);
+
+$siswa->where('makanan_favorit', 'Reza');
+$siswa->update([
+    'nama'              => 'Reza',
+    'makanan_favorit'   => 'apel hijau'
 ]);
 
 // $siswa->delete([
-//     'id' => 2
+//     'nama'    => 1
 // ]);
 
-// $siswa->where('nama', 'Reza');
-// $siswa->update([
-// 	'id'	=> 2,
-// 	'nama'	=> 'Abdul'
-// ]);
-
-foreach($siswa->all() as $item)
-{
-    echo $item["nama"] . " <br>";
-}
+// $dataSiswa = $siswa->all();
+// foreach($dataSiswa as $item)
+// {
+//     echo $item['nama'] . '<br>';
+// }
