@@ -129,4 +129,16 @@ class DB {
 
         return $result;
     }
+
+    public function whereQuery($key, $value)
+    {
+        $query = $this->query("SELECT * FROM $this->table WHERE $key = '$value'");
+        $result = [];
+        while ($data = mysqli_fetch_array($query))
+        {
+            array_push($result, $data);
+        }
+
+        return $result;
+    }
 }   
