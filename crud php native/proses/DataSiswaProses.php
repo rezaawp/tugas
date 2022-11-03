@@ -4,9 +4,16 @@ include './database/DB.php';
 
 $siswa = new DB("siswa");
 
-if(isset($_REQUEST['id']))
+// CARI SISWA
+if(isset($_REQUEST['nis']))
 {
-    $data = $siswa->whereQuery('id', $_REQUEST['id']);
+    $data = $siswa->whereQuery('nis', $_REQUEST['nis']);
 } else {
     $data = $siswa->all();
+}
+
+// DELETE
+if(isset($_REQUEST['delete']))
+{
+    $siswa->delete(['nis' => $_REQUEST['delete']]);
 }
