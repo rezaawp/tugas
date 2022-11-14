@@ -21,6 +21,24 @@ if (isset($_REQUEST['delete'])) {
 if (isset($_REQUEST['tambah'])) {
     $siswa->create([
         'nis'       => $_REQUEST['nis'],
-        'nama'      => $_REQUEST['nama']
+        'nama'      => $_REQUEST['nama'],
+        'gambar'    => $_REQUEST['gambar']
     ]);
+    header('Location:data_siswa.php');
+}
+
+// UPDATE
+if (isset($_GET['id_key'])) {
+    $data = $siswa->whereQuery('nis', $_GET['id_key']);
+}
+
+if (isset($_REQUEST['update'])) {
+    $nis = $_REQUEST['nis'];
+    $nama = $_REQUEST['nama'];
+    $siswa->where('nis', $_GET['id_key']);
+    $siswa->update([
+        'nis'       => $nis,
+        'nama'      => $nama
+    ]);
+    header('Location:data_siswa.php');
 }

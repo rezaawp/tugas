@@ -28,7 +28,8 @@ include './proses/DataSiswaProses.php';
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">NIS</th>
+                    <th>Gambar</th>
                     <th scope="col">Nama</th>
                     <th>Aksi</th>
                 </tr>
@@ -36,10 +37,13 @@ include './proses/DataSiswaProses.php';
             <tbody>
                 <?php foreach ($data as $siswa) { ?>
                     <th scope="row"><?= $siswa['nis'] ?></th>
+                    <td><img src="<?= $siswa['gambar'] ?>" alt=""></td>
                     <td><?= $siswa['nama'] ?></td>
                     <td>
                         <div class="container-fluid d-flex">
-                            <button class="btn btn-warning btn-sm">Update</button>
+                            <form action="edit.php" method="get">
+                                <button class="btn btn-warning btn-sm" value="<?= $siswa['nis'] ?>" name="id_key">Edit</button>
+                            </form>
                             <form action="" method="post">
                                 <button class="btn ms-2 btn-danger btn-sm" value="<?= $siswa['nis'] ?>" name="delete" type="submit">Delete</button>
                             </form>
