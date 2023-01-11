@@ -34,7 +34,7 @@ class Siswa extends Jurusan
 
     public function setJurusanSiswa($jurusan) // Ini adalah enkapsulasi
     {
-        $jurusans = parent::getDataJurusan();     
+        $jurusans = parent::getDataJurusan();   
         foreach($jurusans as $j) {
             if (strtolower($j) === strtolower($jurusan)){
                 $this->jurusan = $jurusan;

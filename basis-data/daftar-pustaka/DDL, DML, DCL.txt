@@ -1,0 +1,14 @@
+DCL : Memunkinkan kita untuk membatasi akses kontrol data berdasarkan level. Contohnya admin bisa apa, dan object bisa apa
+
+DCL, DML, DCL (Daftar Pustaka)
+https://www.techtarget.com/whatis/definition/Data-Definition-Language-DDL
+https://en.wikipedia.org/wiki/Data_control_language
+https://en.wikipedia.org/wiki/SQL#Data_control
+https://www.ibm.com/docs/en/psfa/7.2.1?topic=language-owner-privileges
+https://www.geeksforgeeks.org/database-objects-in-dbms/
+https://www.google.com/search?q=sequences+in+database&sxsrf=AJOqlzUIf1Av4n5gnTH8P7LxBYPAMFEQHA%3A1673403462845&ei=Rhy-Y52hM5-r3LUP3pWKyAo&ved=0ahUKEwid3N_Xub78AhWfFbcAHd6KAqkQ4dUDCA4&uact=5&oq=sequences+in+database&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICAAQBxAeEAoyCggAEAcQHhAPEAoyCAgAEIAEEMsBMggIABAIEAcQHjIICAAQCBAHEB4yCggAEAUQHhAPEAoyCAgAEAgQHhAKMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeOgoIABBHENYEELADOgQIIxAnOgYIABAHEB46DQgAEAcQHhAPEPEEEAo6CAgAEAUQHhAKOgYIABAFEB46CggAEAcQHhAKEBM6DAgAEAcQHhAPEAoQEzoICAAQBxAeEBM6DggAEAUQBxAeEA8QChATOgoIABAIEAcQHhATOg0IABAIEAcQHhDxBBATOgwIABAIEAcQHhAKEBNKBAhBGABKBAhGGABQ0gRYuQZg6ghoAXABeACAAUOIAcIBkgEBM5gBAKABAcgBCMABAQ&sclient=gws-wiz-serp
+https://www.ibm.com/docs/en/integration-bus/9.0.0?topic=databases-database-locations
+https://www.google.com/search?q=indexes+in+database&sxsrf=AJOqlzVGmoV9Z6K510bLUr_05VH_TpJUlg:1673403728817&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjIr8nWur78AhXlkuYKHSCxARwQ_AUoAnoECAEQBA&biw=1366&bih=667&dpr=1
+https://www.codecademy.com/article/sql-indexes
+https://dataschool.com/sql-optimization/how-indexing-works/
+https://www.youtube.com/watch?v=Le74ewlajxg
