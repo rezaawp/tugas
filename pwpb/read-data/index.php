@@ -1,5 +1,5 @@
 <?php
-$koneksi = new PDO('mysql:host=localhost;dbname=sekolah', 'root', '');
+include '../koneksi-database/koneksi.php';
 $query = $koneksi->query('SELECT * FROM siswa');
 
 $data = $query->fetchAll();
@@ -17,7 +17,7 @@ $data = $query->fetchAll();
 <body>
     <h1>List Data Siswa</h1>
 
-    <?php for($i = 0; $i < count($data); $i++) : ?>
+    <?php for ($i = 0; $i < count($data); $i++) : ?>
         <?php echo $i == 0 ? "<hr>" : "" ?>
         <p>Username : <?= $data[$i]['nama'] ?></p>
         <p>Nama : <?= $data[$i]['username'] ?></p>
