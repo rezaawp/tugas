@@ -14,11 +14,11 @@ class Mahasiswa
 
     function tampil_biodata()
     {
-        echo $this->nim . '<br>';
-        echo $this->nama . '<br>';
-        echo $this->jurusan . '<br>';
+        echo "NIM : " . $this->nim . '<br>';
+        echo "Nama : " . $this->nama . '<br>';
+        echo "Jurusan : " . $this->jurusan . '<br>';
     }
 }
-$mahasiswa = new Mahasiswa("011", "Reza Khoirul Wijaya Putra", "PPLG");
+$mahasiswa = new Mahasiswa($_POST['nim'], $_POST['nama'], $_POST['jurusan']);
 
 $mahasiswa->tampil_biodata();
