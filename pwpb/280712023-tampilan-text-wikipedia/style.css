@@ -1,0 +1,13 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
